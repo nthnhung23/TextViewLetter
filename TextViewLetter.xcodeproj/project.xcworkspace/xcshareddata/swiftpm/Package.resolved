@@ -1,0 +1,24 @@
+{
+  "originHash" : "c469d0d071cf08bc1a7b006dcb037c26b559bd0e7b7fa35cc216ead0681e8d33",
+  "pins" : [
+    {
+      "identity" : "inputbaraccessoryview",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/nathantannar4/InputBarAccessoryView",
+      "state" : {
+        "revision" : "2843b4454cfb6de5b4d1e5939fef2dd6257b69ee",
+        "version" : "5.5.0"
+      }
+    },
+    {
+      "identity" : "messengerkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/hhoangna/MessengerKit",
+      "state" : {
+        "branch" : "master",
+        "revision" : "cf4c078b32d9dc3cf712e10ad53adb09e721857f"
+      }
+    }
+  ],
+  "version" : 3
+}

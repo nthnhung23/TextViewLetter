@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Letter View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="LetterViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="LetterViewController" customModule="TextViewLetter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ay5-Gb-yyf">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D9m-5L-4ss" userLabel="TopBarView">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="53"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="hHt-2P-owQ">
+                                                <rect key="frame" x="20" y="9.6666666666666714" width="353" height="34"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="plL-cU-xsw">
+                                                        <rect key="frame" x="0.0" y="0.0" width="48" height="34"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="close"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AFV-pb-tK9">
+                                                        <rect key="frame" x="292" y="0.0" width="61" height="34"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="weui_setting-filled"/>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="hHt-2P-owQ" firstAttribute="centerY" secondItem="D9m-5L-4ss" secondAttribute="centerY" id="0yQ-SU-Qld"/>
+                                            <constraint firstAttribute="width" secondItem="D9m-5L-4ss" secondAttribute="height" multiplier="393:53" id="EDL-8L-MuE"/>
+                                            <constraint firstItem="hHt-2P-owQ" firstAttribute="height" secondItem="D9m-5L-4ss" secondAttribute="height" multiplier="34:53" id="EZU-eo-1a0"/>
+                                            <constraint firstItem="hHt-2P-owQ" firstAttribute="leading" secondItem="D9m-5L-4ss" secondAttribute="leading" constant="20" symbolic="YES" id="auJ-8q-xbF"/>
+                                            <constraint firstAttribute="trailing" secondItem="hHt-2P-owQ" secondAttribute="trailing" constant="20" symbolic="YES" id="wsr-Yz-MiF"/>
+                                        </constraints>
+                                    </view>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VrV-3e-wR2" customClass="UnderlinedTextView" customModule="TextViewLetter" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="61" width="353" height="678"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iWr-7W-PPT" userLabel="BottomBarView" customClass="TextConfigureBarView" customModule="TextViewLetter" customModuleProvider="target">
+                                        <rect key="frame" x="9" y="679.66666666666652" width="375" height="79.333333333333371"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.94509803921568625" green="0.78431372549019607" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="D9m-5L-4ss" firstAttribute="top" secondItem="ay5-Gb-yyf" secondAttribute="top" id="FdN-2B-RUz"/>
+                                    <constraint firstItem="D9m-5L-4ss" firstAttribute="leading" secondItem="ay5-Gb-yyf" secondAttribute="leading" id="G6O-yx-qDw"/>
+                                    <constraint firstAttribute="trailing" secondItem="D9m-5L-4ss" secondAttribute="trailing" id="JYq-ks-u7j"/>
+                                    <constraint firstItem="iWr-7W-PPT" firstAttribute="width" secondItem="ay5-Gb-yyf" secondAttribute="width" multiplier="375:393" id="Nhj-10-ffX"/>
+                                    <constraint firstItem="VrV-3e-wR2" firstAttribute="top" secondItem="D9m-5L-4ss" secondAttribute="bottom" constant="8" symbolic="YES" id="OQC-s2-zlB"/>
+                                    <constraint firstItem="iWr-7W-PPT" firstAttribute="centerX" secondItem="ay5-Gb-yyf" secondAttribute="centerX" id="Ufk-Z8-G8h"/>
+                                    <constraint firstAttribute="bottom" secondItem="iWr-7W-PPT" secondAttribute="bottom" id="Xjk-V1-hRR"/>
+                                    <constraint firstAttribute="trailing" secondItem="VrV-3e-wR2" secondAttribute="trailing" constant="20" symbolic="YES" id="pLM-k2-N3b"/>
+                                    <constraint firstItem="VrV-3e-wR2" firstAttribute="leading" secondItem="ay5-Gb-yyf" secondAttribute="leading" constant="20" symbolic="YES" id="rBF-DC-E5b"/>
+                                    <constraint firstAttribute="bottom" secondItem="VrV-3e-wR2" secondAttribute="bottom" constant="20" symbolic="YES" id="scr-yc-BI0"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ay5-Gb-yyf" secondAttribute="bottom" id="Pez-i3-zJv"/>
+                            <constraint firstItem="ay5-Gb-yyf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="tZ6-qv-Iag"/>
+                            <constraint firstItem="ay5-Gb-yyf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zKi-cY-sXO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ay5-Gb-yyf" secondAttribute="trailing" id="zoS-pN-1KA"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="closeButton" destination="plL-cU-xsw" id="efX-I3-d6w"/>
+                        <outlet property="settingsButton" destination="AFV-pb-tK9" id="2he-wF-zVu"/>
+                        <outlet property="textConfigureBarView" destination="iWr-7W-PPT" id="v4o-0b-Iz7"/>
+                        <outlet property="textView" destination="VrV-3e-wR2" id="hTw-HF-AJV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138" y="4"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="close" width="24" height="24"/>
+        <image name="weui_setting-filled" width="37" height="37"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
