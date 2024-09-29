@@ -15,7 +15,6 @@ class UnderlinedTextView: UITextView {
         super.init(frame: frame, textContainer: textContainer)
         self.font = .systemFont(ofSize: 15.0)
         self.lineHeight = self.font?.lineHeight ?? 15.0
-        self.textContainerInset = .init(top: 24, left: 24, bottom: 24, right: 24)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -26,6 +25,8 @@ class UnderlinedTextView: UITextView {
         didSet {
             if let newFont = font {
                 lineHeight = newFont.lineHeight
+                self.contentInset = .init(top: 12, left: 12, bottom: 12, right: 12)
+                self.textContainerInset = .init(top: 12, left: 12, bottom: 12, right: 12)
                 self.draw(self.bounds)
             }
         }
@@ -34,7 +35,8 @@ class UnderlinedTextView: UITextView {
     
     override func draw(_ rect: CGRect) {
         print("\(#line): \(type(of: self)).\(#function)")
-        
+        super.draw(rect)
+        defer { setNeedsDisplay() }
         let ctx = UIGraphicsGetCurrentContext()
         ctx?.setStrokeColor(UIColor.black.cgColor)
         let numberOfLines = Int(rect.height / lineHeight)
@@ -44,14 +46,15 @@ class UnderlinedTextView: UITextView {
             let y = topInset + CGFloat(i) * lineHeight
             
             let line = CGMutablePath()
-            line.move(to: CGPoint(x: textContainerInset.left, y: y))
-            line.addLine(to: CGPoint(x: rect.width - textContainerInset.left, y: y))
+            line.move(to: CGPoint(x: textContainerInset.left/2, y: y))
+            line.addLine(to: CGPoint(
+                x: rect.width - (2 * textContainerInset.left),
+                y: y
+            ))
             ctx?.addPath(line)
         }
         
         ctx?.strokePath()
-        
-        super.draw(rect)
     }
     
 }
