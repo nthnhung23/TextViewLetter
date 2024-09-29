@@ -9,9 +9,9 @@ import Foundation
 import UIKit
 
 struct LetterConfigureDto {
-    var font: UIFont = .labradaItalic()
-    var color: ColourDto = ColourDto(id: "ff5d75")
-    var textAlignment: NSTextAlignment = .left
+    var font: UIFont
+    var color: ColourDto
+    var textAlignment: NSTextAlignment
     
     init(font: UIFont, color: ColourDto, textAlignment: NSTextAlignment) {
         self.font = font
